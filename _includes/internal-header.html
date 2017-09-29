@@ -1,0 +1,13 @@
+        <header class="site-header">
+            <nav>
+                <ul>
+                    <li><a href="{{ site.baseurl }}/">Home</a></li>
+                    <li {% if page.parent == "sequence-one" %}class="active"{% endif %} ><a {% if page.parent == "sequence-one" %}class="active"{% endif %} href="{{ site.baseurl }}/sequence-one/">Sequence 1</a></li>
+                    <li {% if page.parent == "sequence-two" %}class="active"{% endif %}><a {% if page.parent == "sequence-two" %}class="active"{% endif %} href="{{ site.baseurl }}/sequence-two/">Sequence 2</a></li>
+                </ul>
+            </nav>
+            <div class="heading">
+                <div class="siteHeading">Biological knowledge and society teaching sequence</div>
+                <p>for VCE Biology</p>
+            </div>
+        </header>
