@@ -715,8 +715,7 @@ a.new-tab-warning,
 a.new-tab-warning:before,
 .resource .description a[target="_blank"]:before {
     content: "Opens in new tab";
-    opacity: 0;
-    display: inline-block;
+    display: none;
     position: absolute;
     top: -2em;
     left: 50%;
@@ -731,7 +730,7 @@ a.new-tab-warning:before,
 a.new-tab-warning:after,
 .resource .description a[target="_blank"]:after {
     content: "";
-    opacity: 0;
+    display: none;
     width: 0;
     height: 0;
     border-left: 0.5em solid transparent;
@@ -747,7 +746,7 @@ a.new-tab-warning:hover:before,
 a.new-tab-warning:hover:after,
 .resource .description a[target="_blank"]:hover:before,
 .resource .description a[target="_blank"]:hover:after {
-    opacity: 1;
+    display: block;
 }
 .resource .overlay {
     position: absolute;
