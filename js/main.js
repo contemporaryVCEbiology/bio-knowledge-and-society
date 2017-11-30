@@ -62,6 +62,18 @@ $(document).ready(function(){
           }
         }
     });
+    
+    /*
+     * show contributor overlay
+     */
+    $('.contributors li.detailed').click(function(){
+        $(this).contents().clone().appendTo('.overlay-child');
+        $('.overlay').addClass('on');
+    });
+    $('.overlay').click(function(){
+        $('.overlay-child').empty();
+        $(this).removeClass('on');
+    });
 });
 $(document).on("scroll  touchmove",function(){
     if($(document).scrollTop()>100){

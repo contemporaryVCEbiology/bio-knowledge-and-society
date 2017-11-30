@@ -564,42 +564,125 @@ figcaption {
 .contributors {
     list-style: none;
     padding: 0;
+    figure {
+        margin: 0;
+    }
+    figcaption {
+        font-size: 1em;
+    }
+    li {
+        img {
+            display: block;
+            border-radius: 50%;
+            margin: 0 auto 10px auto;
+            width: 100%;
+            max-width: 200px;
+        }
+        span {
+            text-align: center;
+            display: block;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+        }
+        .details {
+            display: none;
+        }
+        &.detailed:hover {
+            position: relative;
+            box-shadow: 0 0 10px #63779c;
+            cursor: pointer;
+            &:before {
+                content: "";
+                height: 60px;
+                width: 40px;
+                background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHJSURBVGhD7Zm/S8NAFMeLioMgIoIogquLi7i6OYq4GJxUTKLorN6lBQmCu1u1vRN1EKWLf4Burv4FrgU3pYvgD1DfxYdoNU30kiOB94Hv0JfcvfvkIG25AkEQxA8sq9a+5pV70469KbuxZbLMe8d9NpNnkAeHyzcTsbmsO1y4uIRkcJis4eTPIHOferhsfAiJV9idSVyGHr7vd8DEjw4TT8ul/UEspw5IeIEME3tY0mOFV3pwNxpYMgLszFTQl8kTLOlBIpqQSBgkogmJhEEimpBIGCSiCYmEQSKaGBWx/Fqn64nxuIE/SSM4NBKjInBtWF2LHSaucGgkRkUWNw4HoNF1y8C4zItE4XjSgoW85Frku4Q4z6WIy6qznxJMFJf4wUTuRJolVC13Ir9JKHIlEiahyI1IKwlFLkSiJBSZF4kjociaSB1LAXElFHZRjsI9F/B9soulSFIRAYk7yBiW/iTxX5IX8StdpiUUiYt8xZSEIjURkxIKl1dnEhcJk1AHP+rHYfIRc/BiuESRbWynD0wqmyUWSkdDUL8J6ikFJG5X18v92FIfdZoLi57Gj+o4rg1eADvB2WIa4eIUHtpWohIEQRAZolB4B1rWD7BBwWNxAAAAAElFTkSuQmCC");
+                background-repeat: no-repeat;
+                color: #fff;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }
+        }
+    }
 }
+
 @media only screen and (min-width: 37.5em) {
     .contributors {
         margin: 0 -10px 0 -10px;
+        &.four li:first-child {
+            margin-left: 10%;
+        }
+        li {
+            width: 20%;
+            float: left;
+            padding: 10px;
+        }
     }
-    .contributors.four li:first-child {
-        margin-left: 10%;
+}
+.overlay.on {
+    position: fixed;
+    z-index: 10000;
+    background: rgba(0,0,0,0.6);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    &:after {
+        content: "close \000D7";
+        position: absolute;
+        bottom: 2%;
+        right: 2%;
+        color: #fff;
     }
-    .contributors li {
-        width: 20%;
-        float: left;
-        padding: 10px;
+    .overlay-child {
+        overflow: scroll;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10001;
+        background: rgba(99, 119, 156, .95);
+        color: #fff;
+        margin: 0 !important;
+        padding: 20px;
+        width: 100%;
+        max-width: 700px;
+        /* clearfix */
+        &:before,
+        &:after {
+            content: " ";
+            display: table;
+        }
+        a {
+            color: #fff;
+        }
+        &:after {
+            clear: both;
+        }
+        figure {
+            margin: 0;
+        }
+        figcaption {
+            span {
+                text-align: center;
+                display: block;
+                font-size: 1.2em;
+                font-weight: 700;
+                margin-bottom: 0.5em;
+            }
+        }
+        img {
+            display: block;
+            border-radius: 50%;
+            margin: 0 auto 10px auto;
+            width: 100%;
+            max-width: 200px;
+            float: left;
+            margin-right: 10px;
+        }
     }
 }
 
-
-.contributors li img {
-    display: block;
-    border-radius: 50%;
-    margin: 0 auto 10px auto;
-    width: 100%;
-    max-width: 200px;
-}
-.contributors li span {
-    text-align: center;
-    display: block;
-    font-weight: 700;
-    margin-bottom: 0.5em;
-}
-ul.tabs {
-    border-bottom: 2px solid #63779c;
-    margin-bottom: 2em;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
 ul.tabs li {
     display: inline-block;
     float: left;
