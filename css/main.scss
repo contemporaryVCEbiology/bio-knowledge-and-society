@@ -609,9 +609,6 @@ figcaption {
 @media only screen and (min-width: 37.5em) {
     .contributors {
         margin: 0 -10px 0 -10px;
-        &.four li:first-child {
-            margin-left: 10%;
-        }
         li {
             width: 20%;
             float: left;
