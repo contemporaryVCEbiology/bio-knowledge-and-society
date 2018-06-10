@@ -1,13 +1,18 @@
         <header class="site-header">
-            <nav>
-                <ul>
-                    <li><a href="{{ site.baseurl }}/">Home</a></li>
-                    <li {% if page.parent == "sequence-one" %}class="active"{% endif %} ><a {% if page.parent == "sequence-one" %}class="active"{% endif %} href="{{ site.baseurl }}/sequence-one/">Sequence 1</a></li>
-                    <li {% if page.parent == "sequence-two" %}class="active"{% endif %}><a {% if page.parent == "sequence-two" %}class="active"{% endif %} href="{{ site.baseurl }}/sequence-two/">Sequence 2</a></li>
-                </ul>
-            </nav>
             <div class="heading">
-                <div class="siteHeading">Human Impact on Biological Processes</div>
+                <div class="siteHeading"><a href="{{ site.baseurl }}/">{{ site.siteHeading }}</a></div>
                 <p>for VCE Biology</p>
             </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="{{ site.baseurl }}/">Home</a></li>
+                    <li><a {% if page.parent == "sequence-one" %}class="active"{% endif %} href="{{ site.baseurl }}/sequence-one/">Sequence 1</a>
+                        <ul class="sub-menu {% if page.parent == "sequence-one" %}active{% endif %}">
+                            <li><a {% if page.module == "one" %}class="current"{% endif %} href="{{ site.baseurl }}/sequence-one/index.html">Module 1</a></li>
+                            <li><a {% if page.module == "two" %}class="current"{% endif %} href="{{ site.baseurl }}/sequence-one/module2.html">Module 2</a></li>
+                        </ul>
+                    </li>
+                    <li><a {% if page.parent == "sequence-two" %}class="active"{% endif %} href="{{ site.baseurl }}/sequence-two/">Sequence 2</a></li>
+                </ul>
+            </nav>
         </header>
